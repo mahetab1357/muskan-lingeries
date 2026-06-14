@@ -31,7 +31,16 @@ Your role:
 - Keep responses short and helpful (2-4 sentences max)
 - Reply in the same language the customer uses (Hindi or English)`;
 
-const WELCOME = 'Hi! 👋 I\'m the Muskan Lingeries assistant. How can I help you today? You can ask me about our products, sizes, wholesale rates, or how to place an order!';
+const WELCOME = 'Hi! 👋 I\'m the Muskan Lingeries assistant. How can I help you today?';
+
+const SUGGESTIONS = [
+  '🛍️ What products do you sell?',
+  '📦 Wholesale rates?',
+  '📍 Where is your shop?',
+  '📏 What sizes are available?',
+  '📞 How to place an order?',
+  '⏰ What are your timings?',
+];
 
 export default function ChatBot() {
   const [open, setOpen] = useState(false);
@@ -40,15 +49,22 @@ export default function ChatBot() {
   const [loading, setLoading] = useState(false);
   const bottomRef = useRef(null);
 
+  const isFirstMessage = messages.length === 1;
+
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messages, loading]);
 
-  const send = async () => {
-    const text = input.trim();
-    if (!text || loading) return;
+  const clearChat = () => {
+    setMessages([{ role: 'assistant', content: WELCOME }]);
+    setInput('');
+  };
 
-    const userMsg = { role: 'user', content: text };
+  const send = async (text = input) => {
+    const msg = text.trim();
+    if (!msg || loading) return;
+
+    const userMsg = { role: 'user', content: msg };
     const updated = [...messages, userMsg];
     setMessages(updated);
     setInput('');
@@ -73,10 +89,8 @@ export default function ChatBot() {
       });
 
       const data = await res.json();
-      console.log('Groq response:', data);
 
       if (!res.ok) {
-        console.error('Groq error:', data);
         const errMsg = data.error?.message || `Error ${res.status}`;
         setMessages((prev) => [...prev, { role: 'assistant', content: `⚠️ ${errMsg}` }]);
         return;
@@ -85,7 +99,6 @@ export default function ChatBot() {
       const reply = data.choices?.[0]?.message?.content || 'Sorry, I could not get a response. Please WhatsApp us at 9819942566.';
       setMessages((prev) => [...prev, { role: 'assistant', content: reply }]);
     } catch (err) {
-      console.error('Fetch error:', err);
       setMessages((prev) => [...prev, { role: 'assistant', content: `⚠️ ${err.message}` }]);
     } finally {
       setLoading(false);
@@ -103,6 +116,7 @@ export default function ChatBot() {
     <>
       {open && (
         <div className={styles.window}>
+          {/* Header */}
           <div className={styles.header}>
             <div className={styles.avatar}>🛍️</div>
             <div className={styles.headerText}>
@@ -110,9 +124,11 @@ export default function ChatBot() {
               <p>Ask us anything</p>
             </div>
             <div className={styles.onlineDot} />
+            <button className={styles.clearBtn} onClick={clearChat} title="Clear chat">🗑️</button>
             <button className={styles.closeBtn} onClick={() => setOpen(false)}>✕</button>
           </div>
 
+          {/* Messages */}
           <div className={styles.messages}>
             {messages.map((m, i) => (
               <div
@@ -122,6 +138,22 @@ export default function ChatBot() {
                 {m.content}
               </div>
             ))}
+
+            {/* Suggestions — only show before first user message */}
+            {isFirstMessage && !loading && (
+              <div className={styles.suggestions}>
+                {SUGGESTIONS.map((s) => (
+                  <button
+                    key={s}
+                    className={styles.suggestion}
+                    onClick={() => send(s)}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+            )}
+
             {loading && (
               <div className={styles.typing}>
                 <span /><span /><span />
@@ -130,6 +162,7 @@ export default function ChatBot() {
             <div ref={bottomRef} />
           </div>
 
+          {/* Input */}
           <div className={styles.inputRow}>
             <input
               className={styles.input}
@@ -139,7 +172,7 @@ export default function ChatBot() {
               placeholder="Type your message..."
               disabled={loading}
             />
-            <button className={styles.sendBtn} onClick={send} disabled={loading || !input.trim()}>
+            <button className={styles.sendBtn} onClick={() => send()} disabled={loading || !input.trim()}>
               ➤
             </button>
           </div>
