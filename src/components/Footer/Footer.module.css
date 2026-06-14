@@ -203,31 +203,31 @@
 }
 
 .devText {
-  font-size: 0.72rem;
-  color: rgba(255,255,255,0.3);
-  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.28);
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 
 .devName {
   display: inline-block;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.6rem, 4.5vw, 2.8rem);
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 600;
   background: linear-gradient(90deg, var(--rose) 0%, var(--gold) 40%, #f5d88b 60%, var(--rose) 100%);
   background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-decoration: none;
-  letter-spacing: 0.02em;
-  transition: transform 0.3s ease;
+  letter-spacing: 0.04em;
+  transition: opacity 0.2s ease;
   animation: shimmer 4s linear infinite;
 }
 
 .devName:hover {
-  transform: scale(1.02);
+  opacity: 0.8;
 }
 
 @keyframes shimmer {
