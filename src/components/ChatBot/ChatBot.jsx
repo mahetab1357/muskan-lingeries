@@ -73,10 +73,20 @@ export default function ChatBot() {
       });
 
       const data = await res.json();
+      console.log('Groq response:', data);
+
+      if (!res.ok) {
+        console.error('Groq error:', data);
+        const errMsg = data.error?.message || `Error ${res.status}`;
+        setMessages((prev) => [...prev, { role: 'assistant', content: `⚠️ ${errMsg}` }]);
+        return;
+      }
+
       const reply = data.choices?.[0]?.message?.content || 'Sorry, I could not get a response. Please WhatsApp us at 9819942566.';
       setMessages((prev) => [...prev, { role: 'assistant', content: reply }]);
-    } catch {
-      setMessages((prev) => [...prev, { role: 'assistant', content: 'Something went wrong. Please contact us on WhatsApp: 9819942566 😊' }]);
+    } catch (err) {
+      console.error('Fetch error:', err);
+      setMessages((prev) => [...prev, { role: 'assistant', content: `⚠️ ${err.message}` }]);
     } finally {
       setLoading(false);
     }
