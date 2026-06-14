@@ -11,9 +11,7 @@ import Testimonials from './components/Testimonials/Testimonials';
 import HowToOrder from './components/HowToOrder/HowToOrder';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
-import FloatingWhatsApp from './components/FloatingWhatsApp/FloatingWhatsApp';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
-import MobileBottomBar from './components/MobileBottomBar/MobileBottomBar';
 
 export default function App() {
   return (
@@ -31,9 +29,7 @@ export default function App() {
         <Contact />
       </main>
       <Footer />
-      <FloatingWhatsApp />
       <ScrollToTop />
-      <MobileBottomBar />
     </>
   );
 }
