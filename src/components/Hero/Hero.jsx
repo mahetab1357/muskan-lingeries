@@ -2,14 +2,14 @@ import { useState } from 'react';
 import styles from './Hero.module.css';
 import b1 from '../../assets/images/b1.png';
 import b2 from '../../assets/images/b2.png';
-import b3 from '../../assets/images/b3.png';
+import p1 from '../../assets/images/p1.png';
 
 const WA_LINK = 'https://wa.me/919819942566';
 
 const cards = [
   { id: 0, image: b1, label: 'Bra Collection' },
-  { id: 1, image: b2, label: 'Premium Quality' },
-  { id: 2, image: b3, label: 'New Arrivals' },
+  { id: 1, image: p1, label: 'Panties' },
+  { id: 2, image: b2, label: 'Premium Quality' },
 ];
 
 // positions[i] = which slot card i occupies: 'Main' | 'Left' | 'Right'
