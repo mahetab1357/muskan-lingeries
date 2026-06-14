@@ -189,38 +189,31 @@
   color: var(--gold);
 }
 
-/* ── Developer Credit ── */
-.devCredit {
-  padding: 2.5rem 0 2rem;
+/* ── Bottom bar ── */
+.bottomBar {
+  padding: 1.5rem 0 2rem;
   text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  position: relative;
 }
 
-.devCredit::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(90deg, var(--rose), var(--gold));
-  border-radius: 2px;
+.bottomBar > p:first-child {
+  color: rgba(255,255,255,0.3);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.75rem;
 }
 
 .devText {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.35);
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.3);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
 
 .devName {
   display: inline-block;
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.8rem, 5vw, 3.2rem);
+  font-size: clamp(1.6rem, 4.5vw, 2.8rem);
   font-weight: 700;
   background: linear-gradient(90deg, var(--rose) 0%, var(--gold) 40%, #f5d88b 60%, var(--rose) 100%);
   background-size: 200% auto;
@@ -240,18 +233,6 @@
 @keyframes shimmer {
   0%   { background-position: 0% center; }
   100% { background-position: 200% center; }
-}
-
-/* ── Bottom bar ── */
-.bottomBar {
-  padding: 1.25rem 0;
-  text-align: center;
-}
-
-.bottomBar p {
-  color: rgba(255,255,255,0.3);
-  font-size: 0.78rem;
-  letter-spacing: 0.04em;
 }
 
 /* ── Responsive ── */

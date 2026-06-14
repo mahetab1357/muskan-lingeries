@@ -69,8 +69,9 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Developer credit */}
-        <div className={styles.devCredit}>
+        {/* Bottom bar */}
+        <div className={styles.bottomBar}>
+          <p>© 2025 Muskan Lingeries. All Rights Reserved.</p>
           <p className={styles.devText}>Developed by</p>
           <a
             href="https://www.core3innovations.com/"
@@ -78,13 +79,8 @@ export default function Footer() {
             rel="noreferrer"
             className={styles.devName}
           >
-            Core Innovations
+            Core3 Innovations
           </a>
-        </div>
-
-        {/* Bottom bar */}
-        <div className={styles.bottomBar}>
-          <p>© 2025 Muskan Lingeries. All Rights Reserved.</p>
         </div>
       </div>
     </footer>
