@@ -3,7 +3,7 @@ import styles from './ChatBot.module.css';
 
 const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
-const MODEL = 'llama3-8b-8192';
+const MODEL = 'llama-3.1-8b-instant';
 
 const SYSTEM_PROMPT = `You are a helpful customer support assistant for Muskan Lingeries, a premium innerwear brand based in Mumbai, India.
 
