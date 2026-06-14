@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import styles from './Navbar.module.css';
 
+const WA_ENQUIRY = `https://wa.me/919819942566?text=${encodeURIComponent('Hi! I would like to enquire about your products at Muskan Lingeries. Please share details for wholesale / retail orders.')}`;
 const WA_LINK = 'https://wa.me/919819942566';
 
 const navItems = [
@@ -46,7 +47,7 @@ export default function Navbar() {
           </ul>
 
           <div className={styles.actions}>
-            <a href={WA_LINK} target="_blank" rel="noreferrer" className={`${styles.orderBtn} ${styles.orderBtnDesktop}`}>
+            <a href={WA_ENQUIRY} target="_blank" rel="noreferrer" className={`${styles.orderBtn} ${styles.orderBtnDesktop}`}>
               🛍️ Order Now
             </a>
             <button
