@@ -1,0 +1,82 @@
+.section {
+  background: linear-gradient(160deg, #FFF0F4 0%, #FFF8F9 100%);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--transition), background var(--transition), box-shadow var(--transition);
+  cursor: default;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  background: var(--rose);
+  box-shadow: var(--shadow-hover);
+}
+
+.card:hover .iconCircle {
+  background: white;
+}
+
+.card:hover .title,
+.card:hover .desc {
+  color: white;
+}
+
+.iconCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--rose-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  transition: background var(--transition);
+}
+
+.title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--plum);
+  margin-bottom: 0.5rem;
+  transition: color var(--transition);
+}
+
+.desc {
+  font-size: 0.85rem;
+  color: var(--gray-text);
+  line-height: 1.6;
+  transition: color var(--transition);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .card {
+    padding: 1.25rem 1rem;
+  }
+}

@@ -1,0 +1,65 @@
+.statsBar {
+  background: linear-gradient(135deg, #E8547A, #C23A60);
+  padding: 3rem 1.5rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.item {
+  padding: 1rem 1.5rem;
+  position: relative;
+}
+
+.item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  height: 60%;
+  width: 1px;
+  background: rgba(255,255,255,0.3);
+}
+
+.number {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .item:nth-child(2)::after,
+  .item:nth-child(4)::after {
+    display: none;
+  }
+
+  .item {
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .item:nth-child(3),
+  .item:nth-child(4) {
+    border-bottom: none;
+  }
+}

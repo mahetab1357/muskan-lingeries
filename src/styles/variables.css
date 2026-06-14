@@ -1,0 +1,26 @@
+:root {
+  --rose: #E8547A;
+  --rose-dark: #C23A60;
+  --rose-light: #FFF0F4;
+  --blush: #F9D0DC;
+  --plum: #3D1A2E;
+  --gold: #D4A843;
+  --cream: #FFF8F9;
+  --white: #FFFFFF;
+  --gray-soft: #F5F0F2;
+  --gray-text: #6B5B63;
+  --border: rgba(232, 84, 122, 0.15);
+
+  --hero-title: clamp(2.5rem, 8vw, 6rem);
+  --section-h: clamp(1.8rem, 4vw, 3rem);
+  --card-title: 1.1rem;
+  --body: 1rem;
+  --small: 0.85rem;
+
+  --navbar-h: 64px;
+  --radius-card: 16px;
+  --radius-btn: 50px;
+  --shadow-card: 0 4px 24px rgba(61, 26, 46, 0.1);
+  --shadow-hover: 0 20px 60px rgba(232, 84, 122, 0.2);
+  --transition: 0.3s ease;
+}
