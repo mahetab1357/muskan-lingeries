@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const stats = [
   { number: 1000, suffix: '+', label: 'Customers' },
   { number: 50, suffix: '+', label: 'Products' },
-  { number: 10, suffix: '+', label: 'Years Exp.' },
+  { number: 20, suffix: '+', label: 'Years Exp.' },
   { number: 4.9, suffix: '', label: '⭐ Rating', prefix: '' },
 ];
 

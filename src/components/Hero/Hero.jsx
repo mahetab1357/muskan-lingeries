@@ -40,7 +40,7 @@ export default function Hero() {
       <div className={styles.inner}>
         <div className={styles.textCol}>
           <div className={styles.badge}>
-            ✦ Mumbai&apos;s Trusted Brand Since Years
+            ✦ Mumbai&apos;s Trusted Brand Since 20+ Years
           </div>
 
           <h1 className={styles.heading}>

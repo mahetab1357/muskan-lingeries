@@ -15,7 +15,8 @@ Business Details:
 - Phone: 9372455712
 - Business Type: Manufacturer, Wholesaler & Retailer
 - Products: Bra (all types), Panties & Briefs, Wholesale Packs
-- Business Hours: Mon–Sat: 10:00 AM – 8:00 PM, Sunday: 11:00 AM – 6:00 PM
+- Business Hours: Tue–Sat: 10:00 AM – 8:00 PM, Sunday: 11:00 AM – 6:00 PM, Monday: Holiday
+- Experience: 20+ years in the innerwear industry
 
 Key points:
 - We are a wholesale shop — we offer bulk/wholesale rates for bulk orders

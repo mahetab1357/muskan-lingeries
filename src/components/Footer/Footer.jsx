@@ -30,7 +30,7 @@ export default function Footer() {
         <div className={styles.midGrid}>
           <div className={styles.col}>
             <h4>About Us</h4>
-            <p>Muskan Lingeries is a leading manufacturer, wholesaler and retailer of quality innerwear in Mumbai since years. We believe every woman deserves comfort and style.</p>
+            <p>Muskan Lingeries is a leading manufacturer, wholesaler and retailer of quality innerwear in Mumbai since 20+ years. We believe every woman deserves comfort and style.</p>
             <div className={styles.socialRow}>
               <a href="https://wa.me/919819942566" target="_blank" rel="noreferrer" className={styles.socialBtn} style={{ background: '#25D366' }}>💬</a>
               <a href="tel:9372455712" className={styles.socialBtn} style={{ background: 'var(--rose)' }}>📞</a>
@@ -64,7 +64,7 @@ export default function Footer() {
             </div>
             <div className={styles.contactItem}>
               <span className={styles.contactIcon}>⏰</span>
-              <span>Mon–Sat: 10AM–8PM &nbsp;|&nbsp; Sun: 11AM–6PM</span>
+              <span>Tue–Sat: 10AM–8PM &nbsp;|&nbsp; Sun: 11AM–6PM &nbsp;|&nbsp; Mon: Holiday</span>
             </div>
           </div>
         </div>

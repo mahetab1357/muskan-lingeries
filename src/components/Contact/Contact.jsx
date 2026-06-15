@@ -28,7 +28,7 @@ const contactItems = [
   {
     icon: '⏰',
     label: 'Business Hours',
-    value: 'Mon – Sat: 10 AM – 8 PM\nSunday: 11 AM – 6 PM',
+    value: 'Tue – Sat: 10 AM – 8 PM\nSunday: 11 AM – 6 PM\nMonday: Holiday',
     href: null,
     color: '#C89B40',
   },
